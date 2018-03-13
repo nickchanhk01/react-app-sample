@@ -1,10 +1,10 @@
-import Home from './pages/home'
+import Menu from './pages/Menu'
 
 const routesConfig = [
   {
     path: '/',
     exact: true,
-    component: Home
+    component: Menu
   }
 ]
 
