@@ -1,5 +1,9 @@
 # React App boilerplate
 
+## How to start the app
+
+`yarn start`
+
 ## Project Structure
 
 ```
