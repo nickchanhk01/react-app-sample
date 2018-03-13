@@ -1,0 +1,59 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "keywords": [],
+  "author": "Nick Chan",
+  "scripts": {
+    "ignore-sync": "ignore-sync",
+    "start": "REACT_APP_ENV=development poi src/index.js",
+    "build:dev":
+      "REACT_APP_ENV=development yarn clean-build && REACT_APP_ENV=development poi build src/index.js",
+    "build:prod":
+      "REACT_APP_ENV=production yarn clean-build && REACT_APP_ENV=production poi build src/index.js",
+    "build:stg":
+      "REACT_APP_ENV=staging yarn clean-build && REACT_APP_ENV=staging poi build src/index.js",
+    "clean-build": "rimraf ./build",
+    "lint-staged": "lint-staged",
+    "lint": "standard --verbose | snazzy",
+    "precommit": "lint-staged",
+    "prepush": "lint-staged"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react-app": "^3.1.1",
+    "husky": "^0.14.3",
+    "ignore-sync": "^1.0.1",
+    "lint-staged": "^7.0.0",
+    "poi": "^9.6.13",
+    "poi-preset-react": "^9.2.1",
+    "prettier-standard": "^8.0.0",
+    "rimraf": "^2.6.2",
+    "scssfmt": "^1.0.5",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": ["prettier-standard", "standard --fix", "git add"],
+    "*.{css,scss}": ["scssfmt", "git add"],
+    "*ignore-sync": ["ignore-sync", "git add *ignore"],
+    "**/*.json": ["prettier-standard", "git add"]
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "envs": ["jest"],
+    "ignore": ["/public", "/build"]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "presets": [
+    [
+      "babel-preset-env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            ">1%",
+            "last 4 versions",
+            "not ie < 10"
+          ]
+        },
+        "useBuiltIns": true,
+        "debug": false
+      }
+    ],
+    "babel-preset-react-app",
+    "flow"
+  ],
+  "plugins": [
+    "babel-plugin-transform-class-properties"
+  ]
+}
