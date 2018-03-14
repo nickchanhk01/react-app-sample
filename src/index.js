@@ -9,18 +9,18 @@ import App from './App'
 
 // import { fetchAppTokenWithRetry } from './utils/webviewBridgeUtils'
 
-const render = Component => {
-  const appDiv = document.getElementById('app')
-  if (appDiv) {
-    ReactDOM.render(
-      <BrowserRouter>
-        <Component />
-      </BrowserRouter>,
-      appDiv
-    )
-  } else {
-    throw new Error('Cannot find app node')
-  }
+const render =    Component => {
+const appDiv = document.getElementById     ('app')
+if (appDiv) {
+ReactDOM.render(
+  <BrowserRouter>
+    <Component />
+  </BrowserRouter>,
+  appDiv
+)
+} else {
+  throw new Error('Cannot find app node')
+}
 }
 
 // if (isSupportedApp(config.supportedAppVersion)) {
